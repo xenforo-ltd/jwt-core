@@ -173,6 +173,7 @@ class JWKSet implements \Countable, \IteratorAggregate, \JsonSerializable
     /**
      * Returns the values to be serialized.
      */
+	#[\ReturnTypeWillChange]
     public function jsonSerialize(): array
     {
         return ['keys' => \array_values($this->keys)];
@@ -183,6 +184,7 @@ class JWKSet implements \Countable, \IteratorAggregate, \JsonSerializable
      *
      * @param int $mode
      */
+	#[\ReturnTypeWillChange]
     public function count($mode = COUNT_NORMAL): int
     {
         return \count($this->keys, $mode);
@@ -314,6 +316,7 @@ class JWKSet implements \Countable, \IteratorAggregate, \JsonSerializable
      *
      * @internal
      */
+	#[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new \ArrayIterator($this->keys);

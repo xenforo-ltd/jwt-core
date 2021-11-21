@@ -65,6 +65,7 @@ class JWK implements \JsonSerializable
     /**
      * Returns the values to be serialized.
      */
+	#[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->values;
